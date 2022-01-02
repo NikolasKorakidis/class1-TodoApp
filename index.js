@@ -12,7 +12,7 @@ addBtn.addEventListener("click", () => {
   const todo = document.createElement("span");
   todo.classList.add("todo");
   todo.innerHTML = `<div class="todo-checkbox">
-  <input class="${input.value}" type="checkbox" id="${input.value}" name="${input.value}" />
+  <input class="checkbox-c" type="checkbox" id="${input.value}" name="${input.value}" />
   <label for="${input.value}">${input.value}</label>
 </div>
 <div class="todo-bin">
@@ -33,6 +33,18 @@ addBtn.addEventListener("click", () => {
   //   append also to local storage
   //   remove value from input
   input.value = "";
+
+  // checkbox functionality
+  const checkbox = todo.querySelector(".checkbox-c");
+  checkbox.addEventListener("change", () => {
+    if (checkbox.checked) {
+      console.log("is checked");
+      todo.classList.add("checked");
+    } else {
+      console.log("is not checked");
+      todo.classList.remove("checked");
+    }
+  });
 
   //   delete a todo
   const bin = todo.querySelector(".todo-bin");

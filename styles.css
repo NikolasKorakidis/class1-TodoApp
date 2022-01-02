@@ -60,3 +60,8 @@
   cursor: pointer;
   margin-top: 5px;
 }
+
+.todo.checked {
+  background-color: lightgray;
+  text-decoration: line-through;
+}
