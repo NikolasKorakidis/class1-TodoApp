@@ -30,12 +30,16 @@ addBtn.addEventListener("click", () => {
 </div>`;
 
   allTodos.append(todo);
+  //   append also to local storage
   //   remove value from input
   input.value = "";
 
   //   delete a todo
   const bin = todo.querySelector(".todo-bin");
-  bin.addEventListener("click", () => todo.remove());
+  bin.addEventListener("click", () => {
+    todo.remove();
+    // remove also from local storage
+  });
 
   //   is checkbox checked?
 });
@@ -45,3 +49,17 @@ btn.addEventListener("click", () => {
   const todos = document.querySelectorAll(".todo");
   todos.forEach((todo) => todo.remove());
 });
+
+// To do for next time: Local Storage
+
+// check if local storage exists
+// if yes for each items in local storage append it to our todos div
+// if not make a local storage
+
+// for each item we add in in our todos we add it also in local storage
+// and the same for delete
+if (localStorage.getItem("myTodos")) {
+  console.log("local storage is there");
+} else {
+  console.log("local storage is NOT there");
+}
