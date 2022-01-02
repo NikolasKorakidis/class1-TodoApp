@@ -45,3 +45,18 @@
   background-color: #007bff;
   color: #fff;
 }
+
+.body-todos {
+  display: flex;
+  flex-direction: column;
+}
+
+.todo {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #007bff;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  margin-top: 5px;
+}
