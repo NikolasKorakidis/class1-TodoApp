@@ -31,6 +31,18 @@ addBtn.addEventListener("click", () => {
 
   allTodos.append(todo);
   //   append also to local storage
+  const storage = Object.values(JSON.parse(localStorage.getItem("myTodos")));
+  const todoObject = {
+    // id: counter,
+    "value of todo": input.value,
+  };
+
+  // storage.push(todoObject);
+
+  // localStorage.setItem("myTodos", JSON.stringify(storage));
+
+  console.log(storage);
+
   //   remove value from input
   input.value = "";
 
@@ -65,13 +77,6 @@ btn.addEventListener("click", () => {
 // To do for next time: Local Storage
 
 // check if local storage exists
-// if yes for each items in local storage append it to our todos div
-// if not make a local storage
-
-// for each item we add in in our todos we add it also in local storage
-// and the same for delete
-if (localStorage.getItem("myTodos")) {
-  console.log("local storage is there");
-} else {
-  console.log("local storage is NOT there");
+if (localStorage.getItem("myTodos") === null) {
+  localStorage.setItem("myTodos", "{}");
 }
