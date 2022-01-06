@@ -31,7 +31,7 @@ addBtn.addEventListener("click", () => {
 
   allTodos.append(todo);
   //   append also to local storage
-  const storage = Object.values(JSON.parse(localStorage.getItem("myTodos")));
+  const storage = JSON.parse(localStorage.getItem("myTodos"));
   const todoObject = {
     // id: counter,
     "value of todo": input.value,
